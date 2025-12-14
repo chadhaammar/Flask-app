@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="contents">
+    <div id="lower_container"> 
+        <!-- INSTRUCTIONS  -->
+        <table class="content-table-log">
+        <thead>
+            <th>Entry Id</th>
+            <th>Name</th>
+            <th>Date and Time of Entry</th>
+            <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- ------------------------ display all item loop ------------------------ -->
+            {% for item in db_data %}
+            <tr>
+                <td> {{item["id"]}} </td>
+                <td> {{item["malade"]}} </td>
+                <td> {{item["date"]}} </td>
+                <td> {{item["status"]}} </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        </table>
+    </div>
+    <div id = "flex-right-item">
+        <form class = "mb-3" action="#" method="POST" style="margin-top:20px;">
+            <label for="labeldeleteplate" class="form-label"><b> Delete from database</b></label>
+            <p> <input type="text" name="" class="form-control"/></p>
+            <div id="deletehelp" class="form-text"> </div>
+            <br>
+            <p> <button onclick="register_checker()" type="submit" value="submit" class="btn btn-danger">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+    function register_checker() {
+        var result = confirm("Confirm Deletion of collumn ?");
+        if (result == false) {
+            event.preventDefault();
+        }
+    }
+</script>
+{% endblock %}

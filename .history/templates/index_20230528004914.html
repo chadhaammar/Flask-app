@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <br><br>
+        <div class="input-group">
+            <form action="#" method="POST" enctype="multipart/form-data" style="margin-top:20px;">
+                <br>
+                <br>
+                <label for="exampleInputEmail1" class="form-label">zi</label>
+                <input type="text" name="zi" class="form-control"/>
+                <div id="emailHelp" class="form-text">Entrez la valeur de zi</div>
+                <br>
+                <br>
+                <input type="submit" value="Envoyer" class="btn btn-outline-secondary">
+            </form>
+        </div>
+    </div>
+   
+    {% if upload %}
+        <style>
+            #customers {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+            
+            table, td, th {
+                border: 1px solid black;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td {
+                text-align: center;
+            }
+            
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <div class="container">
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <img src="{{ image_url }}" height="500">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table id="customers">
+                <tr width="50" height="50">
+                    <th>Result</th>
+                </tr>
+                <tr width="50" height="50">
+                    <td>
+                        <h1 class="display-8">{{ text }}</h1>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

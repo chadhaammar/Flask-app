@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <div class="container">
+        
+        <br><br>
+        <div class="input-group">
+            <form action="#" method="POST" enctype="multipart/form-data" style="margin-top:20px;">
+                <br>
+                <br>
+                <label for="exampleInputEmail1" class="form-label">nom </label>
+                <input type="text" name="name" class="form-control"/>
+                <div id="emailHelp" class="form-text">----------------------------------------------------------------------------Entrez le nom du patient -------------------------------------------------------------------------</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <input type="file" class="form-control" name="image_name" required>
+                <input type="submit" value="Upload" class="btn btn-outline-secondary">
+            
+            </form>
+        </div>    
+    </div>
+   
+    {% if upload %}
+        <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        input-group{
+background-color:'red';
+width:80%;
+
+height%
+
+        }
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        table, td, th {
+  border: 1px solid black;
+}
+
+        table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+        td {
+  text-align: center;
+}
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+        </style>
+        <div class="container">
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        height="500">
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+            <table id="customers">
+                <tr width="50" 
+                height="50">
+                    
+                    <th>Result</th>
+                </tr>
+                <tr width="50" 
+                height="50">
+                    <td >
+                        <h1 class="display-8"> {{ text }}</h1>
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+    
+    
+    {% endif %}
+
+
+{% endblock  %}
